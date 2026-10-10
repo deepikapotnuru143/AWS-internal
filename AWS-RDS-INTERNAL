@@ -1,0 +1,45 @@
+
+-- AWS RDS Internship Task
+-- Student Database Management using MySQL
+
+CREATE DATABASE IF NOT EXISTS internship_db;
+
+USE internship_db;
+
+-- Create the students table
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    course VARCHAR(100) NOT NULL
+);
+
+-- Insert student records
+INSERT INTO students (name, email, course) VALUES
+('Pujitha',  'pujitha@gmail.com',  'AWS'),
+('Praneeth', 'praneeth@gmail.com', 'Java'),
+('Sravani',  'sravani@gmail.com',  'Python'),
+('Pujithaa', 'pujitha@gmail.com',  'AWS'),
+('Praneeth', 'praneeth@gmail.com', 'Java'),
+('Sravani',  'sravani@gmail.com',  'Python'),
+('Pujitha',  'pujitha@gmail.com',  'AWS'),
+('Praneeth', 'praneeth@gmail.com', 'Java'),
+('Sravani',  'sravani@gmail.com',  'Python'),
+('Pujitha',  'pujitha@gmail.com',  'AWS'),
+('Praneeth', 'praneeth@gmail.com', 'Java'),
+('Sravani',  'sravani@gmail.com',  'Python');
+
+-- Display all student records
+SELECT * FROM students ORDER BY id;
+
+-- Count total student records
+SELECT COUNT(*) AS total_students
+FROM students;
+
+-- Count records by course
+SELECT course, COUNT(*) AS total
+FROM students
+GROUP BY course
+ORDER BY course;
